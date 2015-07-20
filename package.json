@@ -1,6 +1,6 @@
 {
 	"name": "i18n-amd",
-	"version": "1.0.0-SNAPSHOT",
+	"version": "1.0.0",
 	"description": "i18n management",
 	"keywords": [
 		"JS",
