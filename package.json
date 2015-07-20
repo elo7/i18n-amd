@@ -13,6 +13,9 @@
 		"test": "mocha test --recursive --reporter nyan",
 		"postinstall": "bower install"
 	},
+	"dependency": {
+		"ajax-amd": "1.0.2"
+	},
 	"devDependencies": {
 		"bower": "1.4.1",
 		"mocha": "2.0.1"
