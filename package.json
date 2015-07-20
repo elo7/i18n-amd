@@ -1,0 +1,20 @@
+{
+	"name": "i18n-amd",
+	"version": "1.0.0-SNAPSHOT",
+	"description": "i18n management",
+	"keywords": [
+		"JS",
+		"i18n",
+		"Internationalization"
+	],
+	"author": "Elo7",
+	"scripts": {
+		"build": "npm install",
+		"test": "mocha test --recursive --reporter nyan",
+		"postinstall": "bower install"
+	},
+	"devDependencies": {
+		"bower": "1.4.1",
+		"mocha": "2.0.1"
+	}
+}
