@@ -35,8 +35,18 @@ define('i18n', ['ajax'], function(ajax) {
 		return message.replace('{0}', size);
 	}
 
+	function args(key) {
+		var message = get(key);
+		for(var i = 0, size = arguments.length; i < size; i++) {
+			var position = i - 1;
+			message = message.replace('{' + position + '}', arguments[i]);
+		}
+		return message;
+	}
+
 	return {
 		get: get,
-		count: count
+		count: count,
+		args: args
 	}
 });

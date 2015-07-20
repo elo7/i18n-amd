@@ -76,5 +76,15 @@ define(['i18n'], function(subject) {
 			assert.equal('1 product', subject.count('products', 1));
 			assert.equal('2 products', subject.count('products', 2));
 		});
+
+		it('should replace message arguments', function() {
+			messages['arguments.test'] = 'Hello {0}, you are {1}!';
+			assert.equal('Hello Bielo, you are awesome!', subject.args('arguments.test', 'Bielo', 'awesome'));
+		});
+
+		it('should not replace message arguments if theres no additional parameter', function() {
+			messages['arguments.test'] = 'Hello {0}, you are {1}!';
+			assert.equal('Hello {0}, you are {1}!', subject.args('arguments.test'));
+		});
 	});
 });
