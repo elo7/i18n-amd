@@ -22,7 +22,7 @@ vm.runInThisContext(
 );
 
 function setup() {
-	session = {}, local = {};
+	session = {}, local = {}, messages = {};
 	sessionStorage = {
 		setItem: function(key, value) {
 			session[key] = value;
@@ -39,10 +39,6 @@ function setup() {
 			return local[key];
 		}
 	};
-
-	messages = {
-		'test.Title': 'Teste'
-	};
 }
 
 define(['i18n'], function(subject) {
@@ -50,17 +46,35 @@ define(['i18n'], function(subject) {
 		beforeEach(setup);
 
 		it('should return internacionalized string', function() {
-			assert.equal('Teste', subject.get('test.Title'));
+			messages['test.Title'] = 'Test';
+			assert.equal('Test', subject.get('test.Title'));
 		});
 
 		it('should update internacionalized string if theres a new version', function() {
-			// Cache value
-			assert.equal('Teste', subject.get('test.Title'));
-			messages['test.Title'] = "Novo Teste";
-			assert.equal('Teste', subject.get('test.Title'));
+			// Cached value
+			messages['test.Title'] = 'Test';
+			assert.equal('Test', subject.get('test.Title'));
+
 			// Update cached value
 			sessionStorage.setItem('version', 2);
-			assert.equal('Novo Teste', subject.get('test.Title'));
+			messages['test.Title'] = 'New Test';
+			assert.equal('New Test', subject.get('test.Title'));
+		});
+
+		it('should not update internacionalized string if its the same version', function() {
+			messages['test.Title'] = 'Test';
+			assert.equal('Test', subject.get('test.Title'));
+			messages['test.Title'] = 'New Test';
+			assert.equal('Test', subject.get('test.Title'));
+		});
+
+		it('should pluralize string when using count', function() {
+			messages['products.zero'] = 'No product';
+			messages['products.one'] = '1 product';
+			messages['products.other'] = '{0} products';
+			assert.equal('No product', subject.count('products', 0));
+			assert.equal('1 product', subject.count('products', 1));
+			assert.equal('2 products', subject.count('products', 2));
 		});
 	});
 });

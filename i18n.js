@@ -12,17 +12,31 @@ define('i18n', ['ajax'], function(ajax) {
 				localStorage.setItem(response.key, JSON.stringify(response));
 			}
 		}, config);
+	};
+
+	function get(key) {
+		var version = sessionStorage.getItem('version'),
+			message = localStorage.getItem(key);
+
+		if (!version || !message || JSON.parse(message).version != version) {
+			updateLocalI18n(key);
+		}
+		return JSON.parse(localStorage.getItem(key)).message;
+	}
+
+	function formatCountKey(key, size) {
+		if(size == 0) return key + ".zero";
+		else if(size == 1) return key + ".one";
+		else return key + ".other";
+	}
+
+	function count(key, size) {
+		var message = get(formatCountKey(key, size));
+		return message.replace('{0}', size);
 	}
 
 	return {
-		get: function(key) {
-			var version = sessionStorage.getItem('version'),
-				message = localStorage.getItem(key);
-
-			if (!version || !message || JSON.parse(message).version != version) {
-				updateLocalI18n(key);
-			}
-			return JSON.parse(localStorage.getItem(key)).message;
-		}
+		get: get,
+		count: count
 	}
 });
