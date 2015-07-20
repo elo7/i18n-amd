@@ -8,6 +8,10 @@
 		"Internationalization"
 	],
 	"author": "Elo7",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/elo7/i18n-amd"
+	},
 	"scripts": {
 		"build": "npm install",
 		"test": "mocha test --recursive --reporter nyan",
