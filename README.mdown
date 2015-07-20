@@ -42,11 +42,13 @@ For pluralized keys it's expect the following message structure:
 ```
 
 For formatted messages, it's expect the following message structure:
+```js
 {
 	version: 1,
 	message: 'Hello {0}! Have a {1} day!'
 	key: 'args.example'
 }
+```
 
 ## Methods
 
