@@ -6,7 +6,7 @@ I18n.js is a library that helps working with internacionalization on javascript.
 
 ## Install
 
-Install with [Bower](http://bower.io): `bower install i18n-amd`
+Install with [Bower](http://bower.io): `bower install I18n-amd`
 
 ## Dependency
 
