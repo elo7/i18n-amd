@@ -1,7 +1,7 @@
 # I18n-amd
 _I18n-amd internationalization library_
 
-I18n.js is a library that helps working with internacionalization on javascript. This library uses [amd](http://en.wikipedia.org/wiki/Asynchronous_module_definition) structure.
+I18n.js is a library that helps working with internationalization on javascript. This library uses [amd](http://en.wikipedia.org/wiki/Asynchronous_module_definition) structure.
 [![Build Status](https://travis-ci.org/elo7/i18n-amd.svg?branch=master)](https://travis-ci.org/elo7/i18n-amd)
 
 ## Install
