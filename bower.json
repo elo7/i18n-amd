@@ -21,7 +21,7 @@
     "tests"
   ],
   "dependency": {
-    "ajax-amd": "elo7/ajax-amd"
+    "ajax-amd": "elo7/ajax-amd#hackday-remove-dependency"
   },
   "devDependencies": {
     "async-define": "elo7/async-define",
