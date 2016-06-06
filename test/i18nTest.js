@@ -90,7 +90,7 @@ define(['i18n'], function(subject) {
 			assert.equal('Hello {0}, you are {1}!', subject.args('arguments.test'));
 		});
 
-		it('should return internacionalized string using a external domain', function() {
+		it('should return internationalized string using a external domain', function() {
 			subject.domain = EXTERNAL_DOMAIN;
 			messages['test.Title'] = 'Test domain';
 			assert.equal('Test domain', subject.get('test.Title'));

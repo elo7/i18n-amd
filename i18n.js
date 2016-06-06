@@ -6,7 +6,7 @@ define('i18n', ['ajax'], function(ajax) {
 	};
 
 	var updateLocalI18n = function(key, domain) {
-		var domain = domain || "";
+		domain = domain || "";
 		ajax.get(domain + '/i18n/' + key, {}, {
 			success: function(response){
 				sessionStorage.setItem("version", response.version);
