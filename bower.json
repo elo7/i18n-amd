@@ -1,6 +1,6 @@
 {
   "name": "I18n-amd",
-  "version": "1.0.2",
+  "version": "1.0.3-SNAPSHOT",
   "description": "Small lib to work with internationalization on js.",
   "main": "i18n.js",
   "keywords": [
