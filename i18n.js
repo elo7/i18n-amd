@@ -22,7 +22,11 @@ define('i18n', ['ajax'], function(ajax) {
 		if (!version || !message || JSON.parse(message).version != version) {
 			updateLocalI18n(key, this.domain);
 		}
-		return JSON.parse(localStorage.getItem(key)).message;
+		var data = localStorage.getItem(key);
+		if(data) {
+			return JSON.parse(data).message;
+		}
+		return '???' + key + '???';
 	}
 
 	function formatCountKey(key, size) {

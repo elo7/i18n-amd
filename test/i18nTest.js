@@ -13,12 +13,14 @@ vm.runInThisContext(
 			get: function(url, data, callback, config) {
 				var key = url.replace('/i18n/', ''),
 						key = key.replace(EXTERNAL_DOMAIN, '');
-				var response = {
-					version: 1,
-					key: key,
-					message: messages[key]
-				};
-				callback.success(response);
+				if(messages && messages[key]) {
+					var response = {
+						version: 1,
+						key: key,
+						message: messages[key]
+					};
+					callback.success(response);
+				}
 			}
 		}
 	})
@@ -110,6 +112,11 @@ define(['i18n'], function(subject) {
 			assert.equal('No product', subject.count('products', 0));
 			assert.equal('1 product', subject.count('products', 1));
 			assert.equal('2 products', subject.count('products', 2));
+		});
+
+		it('should return key not found', function() {
+			var testKey = 'key.NotFound';
+			assert.equal('???' + testKey + '???', subject.get(testKey));
 		});
 	});
 });
