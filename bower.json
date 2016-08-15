@@ -21,7 +21,7 @@
     "tests"
   ],
   "dependency": {
-    "ajax-amd": "elo7/ajax-amd"
+    "ajax-amd": "1.1.0"
   },
   "devDependencies": {
     "async-define": "elo7/async-define",
