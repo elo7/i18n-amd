@@ -93,7 +93,7 @@ define(['i18n'], function(i18n) {
 ```
 
 #### domain
-`.domain = "example.com"`
+`.domain("example.com")`
 
 ###### Description:
 Sets an optional domain which i18n lib will make requests for the internationalization. This variable needs to be set before any `get()` usage if the domain isn't the same as the current page.
@@ -101,7 +101,7 @@ Sets an optional domain which i18n lib will make requests for the internationali
 ###### Sample:
 ``` js
 define(['i18n'], function(i18n) {
-	i18n.domain = "some-domain.com";
+	i18n.domain("some-domain.com");
 });
 ```
 

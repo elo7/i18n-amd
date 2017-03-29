@@ -5,8 +5,10 @@ define('i18n', ['ajax'], function(ajax) {
 		async: false
 	};
 
+	var _domain = false;
+
 	var updateLocalI18n = function(key, domain) {
-		domain = domain || "";
+		domain = _domain || "";
 		ajax.get(domain + '/i18n/' + key, {}, {
 			success: function(response){
 				sessionStorage.setItem("version", response.version);
@@ -15,12 +17,16 @@ define('i18n', ['ajax'], function(ajax) {
 		}, config);
 	};
 
+	function domain(domain) {
+		_domain = domain;
+	}
+
 	function get(key) {
 		var version = sessionStorage.getItem('version'),
 			message = localStorage.getItem(key);
 
 		if (!version || !message || JSON.parse(message).version != version) {
-			updateLocalI18n(key, this.domain);
+			updateLocalI18n(key, _domain);
 		}
 		var data = localStorage.getItem(key);
 		if(data) {
@@ -53,6 +59,6 @@ define('i18n', ['ajax'], function(ajax) {
 		get: get,
 		count: count,
 		args: args,
-		domain: false
+		domain: domain
 	}
 });
