@@ -26,18 +26,18 @@ For pluralized keys it's expect the following message structure:
 ```
 {
 	version: 1,
-	message: 'No product'
-	key: 'products.zero'
+	message: "No product",
+	key: "products.zero"
 },
 {
 	version: 1,
-	message: 'One product'
-	key: 'products.one'
+	message: "One product",
+	key: "products.one"
 },
 {
 	version: 1,
-	message: '{0} products'
-	key: 'products.other'
+	message: "{0} products",
+	key: "products.other"
 }
 ```
 
@@ -45,8 +45,8 @@ For formatted messages, it's expect the following message structure:
 ```js
 {
 	version: 1,
-	message: 'Hello {0}! Have a {1} day!'
-	key: 'args.example'
+	message: "Hello {0}! Have a {1} day!",
+	key: "args.example"
 }
 ```
 
