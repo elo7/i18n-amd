@@ -6,13 +6,13 @@ I18n.js is a library that helps working with internacionalization on javascript.
 
 ## Install
 
-Install with [Bower](http://bower.io): `bower install I18n-amd`
+Install with [npm](https://www.npmjs.com): `npm install elo7-i18n-amd`
 
 ## Dependency
 
-I18n-amd depends on an [amd](http://en.wikipedia.org/wiki/Asynchronous_module_definition) implementation. We suggest [async-define](https://gist.github.com/sergiolopes/5778124) implementation for dependency lookup.
-I18n-amd also depends on [ajax-amd](https://github.com/elo7/ajax-amd) and a stable version is already defined in bower configuration. You only need to install with [Bower](http://bower.io) and loads i18n-amd and ajax-amd files on your page.
-I18n-amd expects an end point with the url "/i18n/{messageKey}" to return a JSON response with the following structure:
+I18n-amd depends on an [amd](http://en.wikipedia.org/wiki/Asynchronous_module_definition) implementation. We suggest [async-define](https://github.com/elo7/async-define) implementation for dependency lookup.
+I18n-amd also depends on [ajax-amd](https://github.com/elo7/ajax-amd) and a stable version is already defined in `package.json`. You only need to install with [npm](https://www.npmjs.com) and load i18n-amd and ajax-amd files on your page.
+I18n-amd expects an endpoint with the url "/i18n/{messageKey}" to return a JSON response with the following structure:
 ```js
 {
 	version: 1,
@@ -111,4 +111,4 @@ Event-amd is released under the [BSD](https://github.com/elo7/i18n-amd/blob/mast
 
 * * *
 
-Copyright :copyright: 2015 Elo7# event-amd
+Copyright :copyright: 2019 Elo7# i18n-amd
