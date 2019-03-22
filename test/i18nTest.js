@@ -5,7 +5,7 @@ var assert = require('assert');
 var EXTERNAL_DOMAIN = 'http://localhost:3030';
 var DEFAULT_DOMAIN = 'http://localhost:3000';
 
-vm.runInThisContext(fs.readFileSync('bower_components/async-define/async-define.js'));
+vm.runInThisContext(fs.readFileSync('node_modules/define-async/async-define.js'));
 vm.runInThisContext(fs.readFileSync('i18n.js'));
 vm.runInThisContext(
 	// Mocking behavior of ajax-amd
